@@ -1,0 +1,5 @@
+Creo un nuovo database:
+CREATE DATABASE db_university;
+
+
+
