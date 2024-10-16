@@ -20,7 +20,7 @@ WHERE `cfu` > 10;
 Selezionare tutti gli studenti che hanno più di 30 anni:
 SELECT * 
 FROM `students`
-WHERE YEAR(CURDATE()) - YEAR(date_of_birth) > 30;
+WHERE TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) > 30;
 
 --------------------------------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ Selezionare tutti i corsi del primo semetre del primo anno di un qualsiasi corso
 SELECT * 
 FROM `courses` 
 WHERE `period` = "I semestre"
-AND `year` = 1
+AND `year` = 1;
 
 --------------------------------------------------------------------------------------------------
 
@@ -36,14 +36,14 @@ Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) 
 SELECT * 
 FROM `exams`
 WHERE `date`= '2020-06-20'
-AND `hour`>= '14:00:00'
+AND `hour`>= '14:00:00';
 
 --------------------------------------------------------------------------------------------------
 
 Selezionare tutti i corsi di laurea magistrale:
 SELECT * 
 FROM `degrees` 
-WHERE `name` LIKE "Corso di Laurea Magistrale%"
+WHERE `name` LIKE "Corso di Laurea Magistrale%";
 
 --------------------------------------------------------------------------------------------------
 
@@ -60,3 +60,4 @@ WHERE `phone` IS NULL;
 
 --------------------------------------------------------------------------------------------------
 
+Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale):
