@@ -61,3 +61,5 @@ WHERE `phone` IS NULL;
 --------------------------------------------------------------------------------------------------
 
 Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale):
+INSERT INTO students(id,name,,degree_id,name, surname, date_of_birth, fiscal_code, enrolment_date, registration_number, email)
+VALUES('5001','61','Paolo','Orazi','2003-04-09', 'RZOPLA03D09H501L', '2024-10-16', 624142, 'orazi.paolo10@gmail.com');
