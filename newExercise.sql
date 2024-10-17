@@ -24,3 +24,12 @@ GROUP BY `exams`.`date`
 ORDER BY `exams`.`date` ASC;
 
 ---------------------------------------------------------------------------------------------------------
+
+-- todo Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT `departments`.`name` AS `departments`, COUNT(`degrees`.id) as `total_degrees` 
+FROM `departments`
+JOIN `degrees`
+ON `departments`.`id` = `degrees`.`department_id`
+GROUP BY `departments`.`name`;
+
+---------------------------------------------------------------------------------------------------------
