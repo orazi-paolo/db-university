@@ -9,3 +9,6 @@ ORDER BY `year`;
 ---------------------------------------------------------------------------------------------------------
 
 -- todo Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+SELECT `office_address` AS `office`, COUNT(*) AS `teachers_in_same_office` 
+FROM `teachers` 
+GROUP BY `office_address`;
