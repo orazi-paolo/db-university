@@ -12,3 +12,15 @@ ORDER BY `year`;
 SELECT `office_address` AS `office`, COUNT(*) AS `teachers_in_same_office` 
 FROM `teachers` 
 GROUP BY `office_address`;
+
+---------------------------------------------------------------------------------------------------------
+
+-- todo Calcolare la media dei voti di ogni appello d'esame
+SELECT `exams`.`date`, AVG(`exam_student`.`vote`) as `avarage_vote`
+FROM `exams`
+JOIN `exam_student`
+ON `exams`.`id` = `exam_student`.`exam_id`
+GROUP BY `exams`.`date`
+ORDER BY `exams`.`date` ASC;
+
+---------------------------------------------------------------------------------------------------------
