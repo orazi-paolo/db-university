@@ -54,3 +54,14 @@ WHERE `degrees`.`name` LIKE "Corso di Laurea Magistrale%"
 AND `departments`.`name` LIKE "Dipartimento di Neuroscienze%";
 
 ---------------------------------------------------------------------------------------------------------
+
+-- todo Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+SELECT `courses`.`name`, `courses`.`description`, `courses`.`period`, `courses`.`year`, `courses`.`cfu`
+FROM `teachers`
+JOIN `course_teacher`
+ON `teachers`.`id` = `course_teacher`.`teacher_id`
+JOIN `courses`
+ON `courses`.`id` = `course_teacher`.`course_id`
+WHERE `teachers`.`id` = 44;
+
+---------------------------------------------------------------------------------------------------------
