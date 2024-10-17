@@ -33,3 +33,14 @@ ON `departments`.`id` = `degrees`.`department_id`
 GROUP BY `departments`.`name`;
 
 ---------------------------------------------------------------------------------------------------------
+
+--! QUERY CON JOIN
+
+-- todo Selezionare tutti gli studenti iscritti al Corso di Laurea in Economia
+SELECT `students`.`name`, `students`.`surname`, `degrees`.`name` AS `name_degree`
+FROM `students`
+JOIN `degrees`
+ON `students`.`degree_id` = `degrees`.`id`
+WHERE `degrees`.`name` = "Corso di Laurea in Economia";
+
+---------------------------------------------------------------------------------------------------------
